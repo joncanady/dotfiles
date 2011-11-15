@@ -1,0 +1,101 @@
+# Unbind a bunch of the default keys.
+unbind C-b
+unbind C-a
+unbind % 
+unbind ,
+unbind .
+unbind n
+unbind p
+unbind [
+unbind '"'
+unbind l
+unbind &
+unbind "'"
+
+# act like vim
+setw -g mode-keys vi    # we like vi keybindings. emacs is also an option.
+
+# move focus to the pane...
+bind h select-pane -L   # ...to the left
+bind j select-pane -D   # ...below
+bind k select-pane -U   # ...above the left
+bind l select-pane -R   # ...to the right
+
+# Use Control+S as the prefix keystroke. 
+# WARNING: This will interfere with saving in Emacs.
+set-option -g prefix C-s
+
+bind-key C-a    last-window
+bind-key |      split-window -h
+bind-key \      split-window -h
+bind-key -      split-window -v
+bind-key x      kill-pane
+bind-key X      kill-window
+bind-key q      confirm-before kill-session
+bind-key Q      confirm-before kill-server
+bind-key ,      previous-window # <
+bind-key .      next-window     # >
+bind-key <      swap-window -t :-
+bind-key >      swap-window -t :+
+bind-key n      command-prompt 'rename-window %%'
+bind-key N      command-prompt 'rename-session %%'
+bind-key Escape copy-mode -u
+bind-key Up     copy-mode -u
+bind-key r      source-file ~/.tmux.conf; display-message " ✱ ~/.tmux.conf is reloaded"
+bind-key R      refresh-client
+bind-key a      send-key C-a
+bind-key s      send-key C-s
+bind-key C-h    resize-pane -L 5
+bind-key C-j    resize-pane -D 5
+bind-key C-k    resize-pane -U 5
+bind-key C-l    resize-pane -R 5
+
+
+## set status bar
+set-option -g status-utf8 on
+set-option -g status-bg blue
+set-option -g status-fg white
+set-option -g status-attr dim
+
+set-option -g status-left ' ❐ #S ⡇'
+# set-option -g status-right '⡇ #[bold]❐ #S:#I#[default] ⡇ #[bold]#(whoami) ● #H#[default] '
+# set-option -g status-right '⡇ ❖ #(rvm tools identifier) ⡇ #(whoami) ● #H '
+# set-option -g status-left '⣿ #[bold]❐ #S#[default] ⡇'
+set-option -g status-right '⡇ #(whoami) ● #H#[default] '
+
+set-option -g status-right-length 60
+set-option -g status-left-length 60
+
+## highlight active window
+set-window-option -g window-status-current-bg blue
+set-window-option -g window-status-current-fg white
+set-window-option -g window-status-current-attr bright
+set-window-option -g window-status-current-format ' #I #W '
+set-window-option -g window-status-fg white
+set-window-option -g window-status-attr dim
+
+## set window notifications
+set-option -g visual-activity on
+set-option -g visual-content on
+set-window-option -g monitor-activity on
+set-window-option -g automatic-rename off
+
+# starts windows at 1 not 0
+set-option -g base-index 1
+
+## enable mouse
+set-option -g mouse-select-pane on
+set-window-option -g mode-keys vi
+set-window-option -g mode-mouse on
+# set-window-option -g monitor-activity off
+# set-window-option -g monitor-content off
+set-option -g status-keys vi
+set-option -g history-limit 4096
+
+## pane border and colors
+set-option -g pane-active-border-fg yellow
+set-option -g pane-border-fg white
+
+
+## terminal type
+set -g default-terminal "screen-256color"
