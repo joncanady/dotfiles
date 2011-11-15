@@ -67,7 +67,12 @@ set notitle                " no "thanks for flying vim" message
 syntax enable
 filetype plugin indent on
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %=%-16(\ %l,%c-%v\ %)%P
-colorscheme railscasts
+
+" colorscheme stolen from Gary Bernhardt
+" https://github.com/garybernhardt/dotfiles/
+set t_Co=256               " 256 phsycadelic colors
+set background=dark
+colorscheme grb256
 
 
 
