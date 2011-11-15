@@ -1,3 +1,10 @@
+# dotfiles
+
+@holman's repo seemed like a decent place to reboot my dotfiles, so I'm
+customizing his. Original README follows.
+
+---
+
 # holman does dotfiles
 
 ## dotfiles
