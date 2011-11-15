@@ -1,4 +1,5 @@
 set noswapfile
+set nocompatible
 
 " ----------------------------------------------------------------------------
 "  Text Formatting
@@ -14,7 +15,7 @@ set tabstop=4
 set expandtab              " expand tabs to spaces
 set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
-"set textwidth=80           " wrap at 80 chars by default
+set textwidth=80           " wrap at 80 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
 
 " ----------------------------------------------------------------------------
@@ -25,7 +26,7 @@ set virtualedit=block      " allow virtual edit in visual block ..
 let mapleader = ","
 
 " exit to normal mode with 'jj'
-inoremap jj <ESC>
+" inoremap jj <ESC>
 
 
 " reflow paragraph with Q in normal and visual mode
@@ -49,17 +50,25 @@ inoremap <Up> <C-o>gk
 " ----------------------------------------------------------------------------
 
 set ruler                  " show the cursor position all the time
+set cursorline             " highlight the current line
 set noshowcmd              " don't display incomplete commands
 set nolazyredraw           " turn off lazy redraw
 set number                 " line numbers
 set wildmenu               " turn on wild menu
 set wildmode=list:longest,full
-set ch=2                   " command line height
+set ch=1                   " command line height
 set backspace=2            " allow backspacing over everything in insert mode
 set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
 set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
+
+set notitle                " no "thanks for flying vim" message
+syntax enable
+filetype plugin indent on
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %=%-16(\ %l,%c-%v\ %)%P
+colorscheme railscasts
+
 
 
 " ----------------------------------------------------------------------------
@@ -83,9 +92,3 @@ function! StripWhitespace ()
     exec ':%s/ \+$//gc'
 endfunction
 map ,s :call StripWhitespace ()<CR>
-
-
-" ---------------------------------------------------------------------------
-"  Colorscheme
-" ---------------------------------------------------------------------------
-colorscheme railscasts
