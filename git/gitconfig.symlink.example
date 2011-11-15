@@ -8,8 +8,8 @@
 # install this to the correct location by running the project's main `rake`
 # task.
 [user]
-        name = Zach Holman
-        email = your@example.com
+        name = Jon Canady
+        email = jon@joncanady.com
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
@@ -18,6 +18,7 @@
         count   = !git shortlog -sn
         ci = commit
         st = status
+        l = log --graph --abbrev-commit --date=relative 
 [color]
         diff = auto
         status = auto
@@ -28,6 +29,6 @@
 [apply]
         whitespace = nowarn
 [github]
-        user = holman
+        user = joncanady
 [mergetool]
         keepBackup = false
