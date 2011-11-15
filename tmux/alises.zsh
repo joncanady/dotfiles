@@ -1,1 +1,1 @@
-t = tmux -u -2
+alias t=tmux -u -2
