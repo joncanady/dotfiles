@@ -70,7 +70,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %=%-16(\ %l,%c-%v\ %)%P
 
 " colorscheme stolen from Gary Bernhardt
 " https://github.com/garybernhardt/dotfiles/
-set t_Co=256               " 256 phsycadelic colors
+set t_Co=256               " 256 psychadelic colors
 set background=dark
 colorscheme jpc256
 
