@@ -1,0 +1,22 @@
+
+;; ----- smex-history -----
+(
+ rvm-activate-corresponding-ruby
+ eshell
+ package-list-packages
+ eval-region
+ eval-buffer
+ desktop-clear
+ load-theme
+)
+
+;; ----- smex-data -----
+(
+ (load-theme . 11)
+ (eval-buffer . 3)
+ (eshell . 5)
+ (desktop-clear . 1)
+ (package-list-packages . 2)
+ (eval-region . 2)
+ (rvm-activate-corresponding-ruby . 4)
+)
