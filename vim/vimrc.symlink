@@ -1,7 +1,14 @@
 set noswapfile
 set nocompatible
 
+" config for powerline plugin
+let g:Powerline_symbols = 'fancy'
+
+" PathogenInit
+call pathogen#infect() 
+
 " ----------------------------------------------------------------------------
+
 "  Text Formatting
 " ----------------------------------------------------------------------------
 
@@ -66,13 +73,18 @@ set nostartofline          " don't jump to the start of line when scrolling
 set notitle                " no "thanks for flying vim" message
 syntax enable
 filetype plugin indent on
+
+" overridden by powerline plugin
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %=%-16(\ %l,%c-%v\ %)%P
+
 
 " colorscheme stolen from Gary Bernhardt
 " https://github.com/garybernhardt/dotfiles/
 set t_Co=256               " 256 psychadelic colors
 set background=dark
 colorscheme jpc256
+
+
 
 
 
