@@ -1,3 +1,1 @@
-(load-theme 'deeper-blue)
-
 

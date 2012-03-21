@@ -1,22 +1,27 @@
 
 ;; ----- smex-history -----
 (
- rvm-activate-corresponding-ruby
- eshell
+ magit-quit-branches-window
+ magit-status
+ flyspell-mode
+ markdown-mode
  package-list-packages
- eval-region
- eval-buffer
- desktop-clear
  load-theme
+ package-install
 )
 
 ;; ----- smex-data -----
 (
- (load-theme . 11)
+ (load-theme . 29)
  (eval-buffer . 3)
  (eshell . 5)
  (desktop-clear . 1)
- (package-list-packages . 2)
+ (package-list-packages . 3)
  (eval-region . 2)
- (rvm-activate-corresponding-ruby . 4)
+ (rvm-activate-corresponding-ruby . 5)
+ (package-install . 1)
+ (markdown-mode . 1)
+ (flyspell-mode . 1)
+ (magit-status . 1)
+ (magit-quit-branches-window . 1)
 )
