@@ -1,20 +1,24 @@
+; set up package.el and use the marmalade repository
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 (package-refresh-contents)
 
-
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
-                                  starter-kit-bindings scpaste
-                                  markdown-mode yaml-mode rvm))
+; list and install packages
+(defvar my-packages '(solarized-theme
+                      starter-kit starter-kit-lisp starter-kit-eshell
+                      starter-kit-bindings starter-kit-ruby
+                      starter-kit-eshell
+                      starter-kit-js scpaste 
+                      markdown-mode yaml-mode))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-(rvm-use-default)
-
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+(require 'haml-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -28,3 +32,17 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+; color theme!
+(load-theme 'solarized-dark)
+
+
+;;; This was installed by package-install.el.
+;;; This provides support for the package system and
+;;; interfacing with ELPA, the package archive.
+;;; Move this code earlier if you want to reference
+;;; packages in your .emacs.
+(when
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
