@@ -25,7 +25,7 @@
         branch = auto
 [core]
         excludesfile = ~/.gitignore
-        editor = mate -w
+        editor = vim 
 [apply]
         whitespace = nowarn
 [github]
