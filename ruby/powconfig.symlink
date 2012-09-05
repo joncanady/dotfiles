@@ -1,2 +1,2 @@
 # PATH for pow applications so they hit rbenv first
-export PATH="/Users/username/.rbenv/shims:/Users/username/.rbenv/bin:$PATH"
+export PATH="/Users/jonc/.rbenv/shims:/Users/jonc/.rbenv/bin:$PATH"
