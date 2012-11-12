@@ -3,9 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads (run-ruby inf-ruby inf-ruby-keys) "inf-ruby" "inf-ruby.el"
-;;;;;;  (20354 53684))
-;;; Generated autoloads from inf-ruby.el
+;;;### (autoloads (run-ruby inf-ruby inf-ruby-keys) "inf-ruby" "../../../../../.emacs.d/elpa/inf-ruby-2.2.3/inf-ruby.el"
+;;;;;;  "cf4814b6a8112e33d480c4f463825ba3")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/inf-ruby-2.2.3/inf-ruby.el
 
 (autoload 'inf-ruby-keys "inf-ruby" "\
 Set local key defs to invoke inf-ruby from ruby-mode.
@@ -35,7 +35,9 @@ of `ruby-program-name').  Runs the hooks `inferior-ruby-mode-hook'
 
 ;;;***
 
-;;;### (autoloads nil nil ("inf-ruby-pkg.el") (20354 53684 936862))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/inf-ruby-2.2.3/inf-ruby-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/inf-ruby-2.2.3/inf-ruby.el")
+;;;;;;  (20641 3549 76550 0))
 
 ;;;***
 

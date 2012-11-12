@@ -3,9 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "starter-kit-bindings" "starter-kit-bindings.el"
-;;;;;;  (20234 64568))
-;;; Generated autoloads from starter-kit-bindings.el
+;;;### (autoloads nil "starter-kit-bindings" "../../../../../.emacs.d/elpa/starter-kit-bindings-2.0.2/starter-kit-bindings.el"
+;;;;;;  "15871dde609756d91934756e8e9fd965")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/starter-kit-bindings-2.0.2/starter-kit-bindings.el
 
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 
@@ -65,8 +65,9 @@
 
 ;;;***
 
-;;;### (autoloads nil nil ("starter-kit-bindings-pkg.el") (20234
-;;;;;;  64568 990859))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/starter-kit-bindings-2.0.2/starter-kit-bindings-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/starter-kit-bindings-2.0.2/starter-kit-bindings.el")
+;;;;;;  (20641 5261 941032 0))
 
 ;;;***
 

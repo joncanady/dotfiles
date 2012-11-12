@@ -3,9 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "starter-kit-lisp" "starter-kit-lisp.el" (20234
-;;;;;;  64567))
-;;; Generated autoloads from starter-kit-lisp.el
+;;;### (autoloads nil "starter-kit-lisp" "../../../../../.emacs.d/elpa/starter-kit-lisp-2.0.3/starter-kit-lisp.el"
+;;;;;;  "36a6a0544e78f91d1fe2c04bd8277930")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/starter-kit-lisp-2.0.3/starter-kit-lisp.el
 
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 
@@ -37,8 +37,9 @@ Face used to dim parentheses." :group (quote starter-kit-faces))
 
 ;;;***
 
-;;;### (autoloads nil nil ("starter-kit-lisp-pkg.el") (20234 64567
-;;;;;;  552390))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/starter-kit-lisp-2.0.3/starter-kit-lisp-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/starter-kit-lisp-2.0.3/starter-kit-lisp.el")
+;;;;;;  (20641 3547 689307 0))
 
 ;;;***
 

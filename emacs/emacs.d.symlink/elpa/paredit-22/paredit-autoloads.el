@@ -3,8 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads (paredit-mode) "paredit" "paredit.el" (20234 64562))
-;;; Generated autoloads from paredit.el
+;;;### (autoloads (paredit-mode) "paredit" "../../../../../.emacs.d/elpa/paredit-22/paredit.el"
+;;;;;;  "d52369b90e181b848d270ba876c53ffb")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/paredit-22/paredit.el
 
 (autoload 'paredit-mode "paredit" "\
 Minor mode for pseudo-structurally editing Lisp code.
@@ -19,7 +20,9 @@ Paredit behaves badly if parentheses are imbalanced, so exercise
 
 ;;;***
 
-;;;### (autoloads nil nil ("paredit-pkg.el") (20234 64562 750171))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/paredit-22/paredit-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/paredit-22/paredit.el") (20641
+;;;;;;  2710 182784 0))
 
 ;;;***
 

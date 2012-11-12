@@ -3,8 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "starter-kit" "starter-kit.el" (20234 64565))
-;;; Generated autoloads from starter-kit.el
+;;;### (autoloads nil "starter-kit" "../../../../../.emacs.d/elpa/starter-kit-2.0.3/starter-kit.el"
+;;;;;;  "3bb51f9a2031c18d6998f7f146ef826f")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/starter-kit-2.0.3/starter-kit.el
 
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode)) (when (fboundp mode) (funcall mode -1)))
 
@@ -28,8 +29,11 @@
 
 ;;;***
 
-;;;### (autoloads nil nil ("starter-kit-defuns.el" "starter-kit-misc.el"
-;;;;;;  "starter-kit-pkg.el") (20234 64565 724529))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/starter-kit-2.0.3/starter-kit-defuns.el"
+;;;;;;  "../../../../../.emacs.d/elpa/starter-kit-2.0.3/starter-kit-misc.el"
+;;;;;;  "../../../../../.emacs.d/elpa/starter-kit-2.0.3/starter-kit-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/starter-kit-2.0.3/starter-kit.el")
+;;;;;;  (20641 2713 721104 0))
 
 ;;;***
 

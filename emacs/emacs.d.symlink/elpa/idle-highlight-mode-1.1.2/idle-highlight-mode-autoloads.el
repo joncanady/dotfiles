@@ -3,9 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads (idle-highlight-mode) "idle-highlight-mode" "idle-highlight-mode.el"
-;;;;;;  (20234 64561))
-;;; Generated autoloads from idle-highlight-mode.el
+;;;### (autoloads (idle-highlight-mode) "idle-highlight-mode" "../../../../../.emacs.d/elpa/idle-highlight-mode-1.1.2/idle-highlight-mode.el"
+;;;;;;  "f1982aa6d07ccc0f1d5f8521868f2cfb")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/idle-highlight-mode-1.1.2/idle-highlight-mode.el
 
 (autoload 'idle-highlight-mode "idle-highlight-mode" "\
 Idle-Highlight Minor Mode
@@ -14,8 +14,9 @@ Idle-Highlight Minor Mode
 
 ;;;***
 
-;;;### (autoloads nil nil ("idle-highlight-mode-pkg.el") (20234 64561
-;;;;;;  901694))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/idle-highlight-mode-1.1.2/idle-highlight-mode-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/idle-highlight-mode-1.1.2/idle-highlight-mode.el")
+;;;;;;  (20641 2708 760196 0))
 
 ;;;***
 
