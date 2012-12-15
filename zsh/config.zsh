@@ -49,4 +49,4 @@ bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 
 # cd paths
-cdpath=($HOME/code $HOME/code/innova)
+cdpath=($HOME/work $HOME/play)
