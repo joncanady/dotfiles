@@ -1,0 +1,8 @@
+ls
+ls -al
+clear
+exit
+exit
+be cap staging deploy:pending
+exit
+exit
