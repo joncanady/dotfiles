@@ -1,17 +1,8 @@
-colorscheme jpc256
+colorscheme Tomorrow-Night
 set anti
-set lines=999 columns=84
+set lines=999 columns=164
 set guioptions=egmrt
-set guifont=Menlo:h14
-
-" Command + t to :CommandT
-if has("gui_macvim")
-  macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandT<CR>
-endif
-
-" Open Command+T in a new tab
-let g:CommandTAcceptSelectionTabMap='<CR>'
+set guifont=Ubuntu\ Mono:h16
 
 " C-TAB and C-SHIFT-TAB cycle tabs forward and backward
 nmap <c-tab> :tabnext<cr>
