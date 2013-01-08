@@ -1,3 +1,6 @@
 vim/vim.symlink/.netrwhist
 git/gitconfig.symlink
 emacs/emacs.d.symlink/tramp
+emacs/emacs.d.symlink/places
+emacs/emacs.d.symlink/url/cookies
+emacs/emacs.d.symlink/.smex-items
