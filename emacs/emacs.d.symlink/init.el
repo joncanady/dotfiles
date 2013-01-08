@@ -6,9 +6,9 @@
   ;; WARNING!  Depending on the default font,
   ;; if the size is not supported very well, the frame will be clipped
   ;; so that the beginning of the buffer may not be visible correctly. 
-  (set-face-attribute 'default nil :height 160)
+  (set-face-attribute 'default nil :height 160))
 
-  )
+
 
 (add-to-list 'load-path "~/.emacs.d/vendor/")
 (require 'autotest)
