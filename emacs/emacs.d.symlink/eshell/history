@@ -6,3 +6,23 @@ exit
 be cap staging deploy:pending
 exit
 exit
+exit
+exit
+exit
+cd ..
+be guard
+bundle exec guard
+ruby
+which ruby
+exit
+ll
+ls
+ls -al
+clear
+ls
+ll
+which rvm
+which rbenv
+rbenv
+ruby
+exit

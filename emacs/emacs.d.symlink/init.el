@@ -1,17 +1,16 @@
 (when (eq system-type 'darwin)
   ;; default Latin font (e.g. Consolas)
-  (set-face-attribute 'default nil :family "Ubuntu Mono")
+  (set-face-attribute 'default nil :family "Consolas")
   ;; default font size (point * 10)
   ;;
   ;; WARNING!  Depending on the default font,
   ;; if the size is not supported very well, the frame will be clipped
   ;; so that the beginning of the buffer may not be visible correctly. 
-  (set-face-attribute 'default nil :height 160))
+  (set-face-attribute 'default nil :height 140))
 
 
 
 (add-to-list 'load-path "~/.emacs.d/vendor/")
-(require 'autotest)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 (require 'hippie-exp)
@@ -63,8 +62,8 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load-theme 'solarized-dark)
-(add-to-list 'default-frame-alist '(alpha 90 90))
+(load-theme 'twilight)
+(add-to-list 'default-frame-alist '(alpha 95 95))
 
 ;; --------------------------------------------------------
 ;; nice little alternative visual bell; Miles Bader <miles /at/ gnu.org>
@@ -106,3 +105,42 @@
 ;; Setting rbenv path
 (setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
 (setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
+
+;; org-mode
+(require 'org)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+(setq org-agenda-files (list "~/Dropbox/todo/innova.org"
+                             "~/Dropbox/todo/personal.org"))
+
+(setq org-default-notes-file "~/Dropbox/todo/innova.org")
+(define-key global-map "\C-co" 'org-capture)
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Dropbox/todo/innova.org" "Inbox")
+         "* TODO %?\n  %i\n  %a")))
+
+(add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
+(require 'powerline)
+(setq powerline-arrow-shape 'arrow14)
+
+;; set magit executable path
+(setq magit-git-executable "/usr/local/bin/hub")
+
+(eval-after-load 'ruby-mode
+  '(progn
+     ;; rcodetools
+     (require 'rcodetools)
+     (define-key ruby-mode-map (kbd "C-c C-c") 'xmp))
+  )
+
+(define-key global-map (kbd "C-;") 'comment-dwim)
+
+;; F12 toggles fullscreen mode
+(global-set-key [f12] 'ns-toggle-fullscreen)
+
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
