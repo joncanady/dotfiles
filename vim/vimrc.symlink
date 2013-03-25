@@ -4,8 +4,22 @@ set nocompatible
 " config for powerline plugin
 let g:Powerline_symbols = 'fancy'
 
-" PathogenInit
-call pathogen#infect() 
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'ervandew/supertab'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-haml'
+Bundle 'Align'
+
+filetype plugin indent on
 
 " ----------------------------------------------------------------------------
 
@@ -72,7 +86,6 @@ set nostartofline          " don't jump to the start of line when scrolling
 
 set notitle                " no "thanks for flying vim" message
 syntax enable
-filetype plugin indent on
 
 " overridden by powerline plugin
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %=%-16(\ %l,%c-%v\ %)%P
