@@ -79,8 +79,8 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %=%-16(\ %l,%c-%v\ %)%P
 
 
 set t_Co=256               " 256 psychadelic colors
-set background=dark
-colorscheme Tomorrow-Night
+" set background=dark
+colorscheme twilight
 
 
 
@@ -109,6 +109,13 @@ endfunction
 map ,s :call StripWhitespace ()<CR>
 
 set wildignore=vendor/rails,vendor/cache,vendor/ruby
+
+
+" ---------------------------------------------------------------------------
+" Indent XML with XMLLINT
+" ---------------------------------------------------------------------------
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -168,3 +175,17 @@ function! RunTests(filename)
         end
     end
 endfunction
+
+"------------------------------
+" NERDTREE
+"------------------------------
+
+map gn :NERDTreeToggle<CR>
+
+
+"-------------------------------
+" Required for textobj-rubyblock
+"-------------------------------
+
+runtime macros/matchit.vim
+
