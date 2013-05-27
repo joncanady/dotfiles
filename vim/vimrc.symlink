@@ -9,6 +9,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'kien/ctrlp.vim'
@@ -17,7 +18,8 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-haml'
-Bundle 'Align'
+Bundle 'godlygeek/tabular'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
@@ -38,6 +40,8 @@ set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
 set textwidth=80           " wrap at 80 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
+set splitbelow             " Horz splits open below the current buffer
+set splitright             " Vert splits open to the right of the current buffer
 
 " ----------------------------------------------------------------------------
 "  Remapping
@@ -91,9 +95,9 @@ syntax enable
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %=%-16(\ %l,%c-%v\ %)%P
 
 
-set t_Co=256               " 256 psychadelic colors
-" set background=dark
-colorscheme twilight
+set t_Co=256               " 256 psychadelic color
+set background=dark
+colorscheme solarized
 
 
 
@@ -136,7 +140,7 @@ au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+map <leader>r :call RunTests('')<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
 
@@ -202,3 +206,15 @@ map gn :NERDTreeToggle<CR>
 
 runtime macros/matchit.vim
 
+" Custom syntax highlighting
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,*.pill,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+
+"-------------------------------
+" Tabularize!
+"-------------------------------
+" nmap <Leader>a= :Tabularize /=<CR>
+" vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <Leader>ah :Tabularize /=><CR>
+vmap <Leader>ah :Tabularize /=><CR>
