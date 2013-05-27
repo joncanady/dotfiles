@@ -44,7 +44,6 @@ bind-key Up     copy-mode -u
 bind-key r      source-file ~/.tmux.conf; display-message " ✱ ~/.tmux.conf is reloaded"
 bind-key R      refresh-client
 bind-key a      send-key C-a
-bind-key s      send-key C-s
 bind-key C-h    resize-pane -L 5
 bind-key C-j    resize-pane -D 5
 bind-key C-k    resize-pane -U 5
