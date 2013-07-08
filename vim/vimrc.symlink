@@ -1,8 +1,11 @@
 set noswapfile
 set nocompatible
 
-" config for powerline plugin
-let g:Powerline_symbols = 'fancy'
+" config for Airline plugin
+let g:airline_enable_fugitive=1
+let g:airline_theme='badwolf'
+let g:airline_powerline_fonts=1
+set ttimeoutlen=50
 
 filetype off
 
@@ -16,7 +19,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'ervandew/supertab'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-haml'
 Bundle 'godlygeek/tabular'
 Bundle 'altercation/vim-colors-solarized'
@@ -141,8 +144,8 @@ au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 map <leader>r :call RunTests('')<cr>
-map <leader>c :w\|:!script/features<cr>
-map <leader>w :w\|:!script/features --profile wip<cr>
+map <leader>c :w\|:!script/cucumber<cr>
+map <leader>w :w\|:!script/cucumber --profile wip<cr>
 
 function! RunTestFile(...)
     if a:0
@@ -181,7 +184,7 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     if match(a:filename, '\.feature$') != -1
-        exec ":!script/features " . a:filename
+        exec ":!script/cucumber " . a:filename
     else
         if filereadable("script/test")
             exec ":!script/test " . a:filename

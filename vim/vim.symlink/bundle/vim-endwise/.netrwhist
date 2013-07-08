@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/jonc/work/chemist/lib'
+let g:netrw_dirhist_2='/Users/jonc/work/chemist/app/assets/javascripts/chemist'
+let g:netrw_dirhist_3='/Users/jonc/work/chemist/app/assets/stylesheets/chemist'
+let g:netrw_dirhist_4='/Users/jonc/work/pinglish/lib/pinglish'
+let g:netrw_dirhist_5='/Users/jonc/.rbenv/versions/1.8.7-p370/lib/ruby/gems/1.8/bundler/gems/interfax-fb1d1a3e269f'
+let g:netrw_dirhist_6='/Users/jonc/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/mumboe-soap4r-1.5.8.6'
+let g:netrw_dirhist_7='/Users/jonc/work/dublin-rails-apps/amazon_origins/config/deploy'
