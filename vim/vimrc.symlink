@@ -15,14 +15,18 @@ call vundle#rc()
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-haml'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'ervandew/supertab'
 Bundle 'bling/vim-airline'
-Bundle 'tpope/vim-haml'
 Bundle 'godlygeek/tabular'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'shougo/neocomplcache'
+
 
 filetype plugin indent on
 
@@ -72,6 +76,9 @@ vnoremap <Down> gj
 vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
+
+" switch to previous buffer
+nnoremap <leader><leader> <c-^>
 
 " ----------------------------------------------------------------------------
 "  UI

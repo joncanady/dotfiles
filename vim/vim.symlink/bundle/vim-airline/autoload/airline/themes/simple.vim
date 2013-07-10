@@ -36,7 +36,9 @@ let s:termbg = 232
 let s:termsep = 236
 let s:guisep = '#303030'
 
-let s:N1 = s:swap ? [ s:guibg , '#00dfff' , s:termbg , 45 ] : [ s:guibg , '#080808' , 45 , s:termbg ]
+let g:airline#themes#simple#inactive = {'mode': [ '#4e4e4e' , s:guibg , 239 , s:termbg , '' ] }
+
+let s:N1 = s:swap ? [ s:guibg , '#00dfff' , s:termbg , 45 ] : [ '#00dfff' , s:guibg , 45 , s:termbg ]
 let s:N2 = [ '#ff5f00' , s:guibg, 202 , s:termbg ]
 let s:N3 = [ '#767676' , s:guibg, 243 , s:termbg ]
 let g:airline#themes#simple#normal = {
@@ -48,13 +50,12 @@ let g:airline#themes#simple#normal = {
       \ 'info_separator': [ s:guisep  , s:N3[1] , s:termsep , s:N3[3]  , 'bold' ] ,
       \ 'statusline':     [ s:N3[0]   , s:N3[1] , s:N3[2]   , s:N3[3]  , ''     ] ,
       \ 'file':           [ '#ff0000' , s:guibg , 160       , s:termbg , ''     ] ,
-      \ 'inactive':       [ '#4e4e4e' , s:guibg , 239       , s:termbg , ''     ] ,
       \ }
 let g:airline#themes#simple#normal_modified = {
       \ 'statusline':     [ '#df0000' , s:guibg, 160     , s:termbg    , ''     ] ,
       \ }
 
-let s:I1 = s:swap ? [ s:guibg, '#5fff00' , s:termbg , 82 ] : [ s:guibg, '#080808' , 82 , s:termbg ]
+let s:I1 = s:swap ? [ s:guibg, '#5fff00' , s:termbg , 82 ] : [ '#5fff00' , s:guibg, 82 , s:termbg ]
 let s:I2 = [ '#ff5f00' , s:guibg, 202 , s:termbg ]
 let s:I3 = [ '#767676' , s:guibg, 243 , s:termbg ]
 let g:airline#themes#simple#insert = {
@@ -67,6 +68,14 @@ let g:airline#themes#simple#insert = {
       \ 'statusline':     [ s:I3[0]   , s:I3[1] , s:I3[2]   , s:I3[3] , ''     ] ,
       \ }
 let g:airline#themes#simple#insert_modified = copy(g:airline#themes#simple#normal_modified)
+let g:airline#themes#simple#insert_paste = {
+      \ 'mode':           [ s:I1[0]   , '#d78700' , s:I1[2] , 172     , ''     ] ,
+      \ 'mode_separator': [ '#d78700' , s:I2[1]   , 172     , s:I2[3] , ''     ] ,
+      \ }
+let g:airline#themes#simple#insert_replace = {
+      \ 'mode':           [ s:I1[0]   , '#af0000' , s:I1[2] , 124     , ''     ] ,
+      \ 'mode_separator': [ '#af0000' , s:I2[1]   , 124     , s:I2[3] , ''     ] ,
+      \ }
 
 let s:V1 = s:swap ? [ s:guibg, '#dfdf00' , s:termbg , 184 ] : [ '#dfdf00' , s:guibg, 184 , s:termbg ]
 let s:V2 = [ '#ff5f00' , s:guibg, 202 , s:termbg ]
