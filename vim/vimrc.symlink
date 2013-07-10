@@ -18,6 +18,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-cucumber'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -105,14 +106,9 @@ syntax enable
 " overridden by powerline plugin
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %=%-16(\ %l,%c-%v\ %)%P
 
-
 set t_Co=256               " 256 psychadelic color
 set background=dark
 colorscheme solarized
-
-
-
-
 
 " ----------------------------------------------------------------------------
 " Visual Cues
