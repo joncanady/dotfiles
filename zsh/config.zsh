@@ -48,5 +48,7 @@ bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 
+bindkey -e
+
 # cd paths
-cdpath=($HOME/work $HOME/play)
+cdpath=($HOME/src $HOME/play)

@@ -3,7 +3,7 @@ set nocompatible
 
 " config for Airline plugin
 let g:airline_enable_fugitive=1
-let g:airline_theme='badwolf'
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 set ttimeoutlen=50
 
@@ -28,6 +28,10 @@ Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'shougo/neocomplcache'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-misc'
+Bundle 'nginx.vim'
+Bundle 'csexton/trailertrash.vim'
 
 
 filetype plugin indent on
@@ -215,6 +219,9 @@ runtime macros/matchit.vim
 
 " Custom syntax highlighting
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,*.pill,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+au BufRead,BufNewFile *.hamlc set ft=haml
+
+au BufRead,BufNewFile /opt/boxen/config/nginx/*,/etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif 
 
 "-------------------------------
 " Tabularize!
@@ -225,3 +232,12 @@ nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>ah :Tabularize /=><CR>
 vmap <Leader>ah :Tabularize /=><CR>
+
+
+"tags
+set tags=./tags;
+let g:easytags_dynamic_files = 2
+
+
+" automatically remove trailing whitespace on save with trailertrash plugin
+autocmd BufWritePre * :Trim
