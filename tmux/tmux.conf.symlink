@@ -21,9 +21,8 @@ bind j select-pane -D   # ...below
 bind k select-pane -U   # ...above the left
 bind l select-pane -R   # ...to the right
 
-# Use Control+S as the prefix keystroke. 
-# WARNING: This will interfere with saving in Emacs.
-set-option -g prefix C-s
+# Use C-\ as the leader key
+set-option -g prefix 'C-o'
 
 bind-key C-a    last-window
 bind-key |      split-window -h
