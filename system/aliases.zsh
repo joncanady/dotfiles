@@ -10,3 +10,4 @@ then
 fi
 
 alias vihosts="sudo vim /etc/hosts"
+alias dnsclear="sudo killall -HUP mDNSResponder"
