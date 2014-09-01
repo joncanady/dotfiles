@@ -3,7 +3,7 @@ set nocompatible
 
 " config for Airline plugin
 let g:airline_enable_fugitive=1
-let g:airline_theme='solarized'
+let g:airline_theme='badwolf'
 let g:airline_powerline_fonts=1
 set ttimeoutlen=50
 
@@ -32,6 +32,8 @@ Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'nginx.vim'
 Bundle 'csexton/trailertrash.vim'
+Bundle 'pbrisbin/vim-mkdir'
+Bundle 'rking/ag.vim'
 
 
 filetype plugin indent on
@@ -61,7 +63,7 @@ set splitright             " Vert splits open to the right of the current buffer
 " ----------------------------------------------------------------------------
 
 " lead with ,
-let mapleader = ","
+let mapleader = " "
 
 " exit to normal mode with 'jj'
 " inoremap jj <ESC>
@@ -85,6 +87,10 @@ inoremap <Up> <C-o>gk
 
 " switch to previous buffer
 nnoremap <leader><leader> <c-^>
+
+" navigate between Tabs
+nnoremap <C-h> gT
+nnoremap <C-l> gt
 
 " ----------------------------------------------------------------------------
 "  UI
@@ -112,7 +118,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %=%-16(\ %l,%c-%v\ %)%P
 
 set t_Co=256               " 256 psychadelic color
 set background=dark
-colorscheme solarized
+colorscheme smyck
 
 " ----------------------------------------------------------------------------
 " Visual Cues
@@ -126,15 +132,6 @@ set ignorecase             " ignore case when searching
 set nohlsearch             " don't highlight searches
 set visualbell             " shut the fuck up
 
-
-" ---------------------------------------------------------------------------
-"  Strip all trailing whitespace in file
-" ---------------------------------------------------------------------------
-
-function! StripWhitespace ()
-    exec ':%s/ \+$//gc'
-endfunction
-map ,s :call StripWhitespace ()<CR>
 
 set wildignore=vendor/rails,vendor/cache,vendor/ruby
 
@@ -152,8 +149,9 @@ au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 map <leader>r :call RunTests('')<cr>
-map <leader>c :w\|:!script/cucumber<cr>
-map <leader>w :w\|:!script/cucumber --profile wip<cr>
+" map <leader>c :w\|:!script/cucumber<cr>
+" Jon, <leader>w is redifined here and again down yonder, wtf? -Mike
+" map <leader>w :w\|:!script/cucumber --profile wip<cr>
 
 function! RunTestFile(...)
     if a:0
@@ -218,7 +216,7 @@ map gn :NERDTreeToggle<CR>
 runtime macros/matchit.vim
 
 " Custom syntax highlighting
-au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,*.pill,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,Guardfile,*.pill,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 au BufRead,BufNewFile *.hamlc set ft=haml
 
 au BufRead,BufNewFile /opt/boxen/config/nginx/*,/etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
@@ -226,8 +224,8 @@ au BufRead,BufNewFile /opt/boxen/config/nginx/*,/etc/nginx/*,/usr/local/nginx/co
 "-------------------------------
 " Tabularize!
 "-------------------------------
-" nmap <Leader>a= :Tabularize /=<CR>
-" vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>ah :Tabularize /=><CR>
@@ -238,9 +236,11 @@ vmap <Leader>ah :Tabularize /=><CR>
 set tags=./tags;
 let g:easytags_dynamic_files = 2
 
+map <leader>w :w<cr>
+map <leader>q :q<cr>
 
 " automatically remove trailing whitespace on save with trailertrash plugin
-" autocmd BufWritePre * :Trim
+autocmd BufWritePre * :Trim
 
 " The Silver Searcher
 if executable('ag')
@@ -253,3 +253,14 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'))
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <Leader>n :call RenameFile()<cr>
