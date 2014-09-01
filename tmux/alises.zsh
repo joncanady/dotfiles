@@ -1,1 +1,1 @@
-alias t="tmux -u -2 -S /opt/boxen/data/tmux/pairing"
+alias t="chmod 777 /tmp/tmux_pairing.socket; tmux -u -2 -S /tmp/tmux_pairing.socket"
