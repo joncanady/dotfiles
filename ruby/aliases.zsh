@@ -8,3 +8,5 @@ alias be="b exec"
 alias ber='b exec rspec'
 
 alias z="zeus"
+
+alias sk="be sidekiq"

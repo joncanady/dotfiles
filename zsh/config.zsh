@@ -51,4 +51,4 @@ bindkey '^?' backward-delete-char
 bindkey -e
 
 # cd paths
-cdpath=($HOME/src $HOME/play)
+cdpath=($HOME/Projects $HOME/play)

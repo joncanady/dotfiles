@@ -1,3 +1,4 @@
+let g:airline_theme = 'dark'
 call airline#init#bootstrap()
 call airline#init#sections()
 source plugin/airline.vim
@@ -23,8 +24,8 @@ describe 'default'
 
   it 'should only render warning section in active splits'
     wincmd s
-    Expect airline#statusline(1) =~ 'whitespace'
-    Expect airline#statusline(2) !~ 'whitespace'
+    Expect airline#statusline(1) =~ 'warning'
+    Expect airline#statusline(2) !~ 'warning'
     wincmd c
   end
 end

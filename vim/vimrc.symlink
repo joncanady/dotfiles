@@ -57,6 +57,7 @@ set textwidth=80           " wrap at 80 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
 set splitbelow             " Horz splits open below the current buffer
 set splitright             " Vert splits open to the right of the current buffer
+set mouse+=a               " MOUSE FTW
 
 " ----------------------------------------------------------------------------
 "  Remapping
@@ -240,7 +241,7 @@ map <leader>w :w<cr>
 map <leader>q :q<cr>
 
 " automatically remove trailing whitespace on save with trailertrash plugin
-autocmd BufWritePre * :Trim
+autocmd BufWritePre * :TrailerTrim
 
 " The Silver Searcher
 if executable('ag')

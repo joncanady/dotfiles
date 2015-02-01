@@ -10,4 +10,4 @@ then
 fi
 
 alias vihosts="sudo vim /etc/hosts"
-alias dnsclear="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias dnsclear="sudo discoveryutil udnsflushcaches"

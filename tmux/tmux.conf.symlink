@@ -1,7 +1,7 @@
 # Unbind a bunch of the default keys.
 unbind C-b
 unbind C-a
-unbind % 
+unbind %
 unbind ,
 unbind .
 unbind n
@@ -106,3 +106,7 @@ set-option -g pane-border-fg white
 ## terminal type
 set -g default-terminal "screen-256color"
 setw -g xterm-keys on
+
+
+## SSH socket stuff
+setenv SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
